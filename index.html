@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>祝朱凯宁生日快乐</title>
+    <title>公务员备考指南</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -57,40 +57,62 @@
             font-style: italic;
             color: #34495e;
         }
+
     </style>
 </head>
 
 <body>
     <div class="container">
-        <h1>祝朱凯宁生日快乐！</h1>
-        <div id="blessings"></div>
+        <h1>公务员备考指南</h1>
+        <div id="blessings">以下是一些公务员备考建议，点击刷新查看新建议：</div>
         <div class="poem">
-            岁岁常欢愉，年年皆胜意<br>
-            愿君如松柏，夭矫历千霜
+            认真备考，梦想成真<br>
+            持之以恒，定能上岸
         </div>
+        <div id="motivational-quote"></div>
+        <script>
+            const quotes = [
+                '制定详细的学习计划，合理安排每天的学习时间。',
+                '深入了解公务员考试的科目和题型，明确备考方向。',
+                '购买权威的备考教材和辅导资料，确保学习内容的准确性。',
+                '多做历年真题，熟悉考试难度和命题规律。',
+                '参加专业的培训课程，获取系统的知识和解题技巧。',
+                '建立错题本，分析错误原因，加强薄弱环节的学习。',
+                '注重积累常识知识，拓宽知识面。',
+                '提高阅读理解能力，快速准确地获取信息。',
+                '练习写作，提高文字表达和逻辑思维能力。',
+                '培养良好的时间管理能力，在考试中合理分配时间。',
+                '保持积极的心态，遇到困难不轻易放弃。',
+                '定期进行模拟考试，检验学习效果。',
+                '分析模拟考试结果，调整学习策略。',
+                '与其他备考考生交流经验，互相鼓励和支持。',
+                '关注时事热点，了解国家政策和社会动态。',
+                '注重身体健康，保持良好的作息和饮食习惯。',
+                '学习之余适当进行运动，缓解压力。',
+                '提高计算机操作能力，适应电子化考试。',
+                '掌握有效的记忆方法，提高学习效率。',
+                '对重点知识进行反复复习，加深记忆。',
+                '学会总结归纳，将知识点系统化。',
+                '提高数学运算能力，解决数量关系和资料分析题目。',
+                '加强逻辑推理训练，提高判断推理能力。',
+                '多阅读优秀的范文，学习写作思路和方法。',
+                '进行口语练习，提高面试表达能力。',
+                '了解面试流程和技巧，做好面试准备。',
+                '参加面试模拟训练，积累实战经验。',
+                '注意仪表仪态，给面试官留下良好的印象。',
+                '在备考过程中不断调整心态，保持信心。',
+                '相信自己的能力，坚持到最后一定能取得好成绩。'
+            ];
+            function getRandomQuote() {
+                const randomIndex = Math.floor(Math.random() * quotes.length);
+                return quotes[randomIndex];
+            }
+            const motivationalQuoteDiv = document.getElementById('motivational-quote');
+            motivationalQuoteDiv.textContent = getRandomQuote();
+            const blessingsDiv = document.getElementById('blessings');
+            blessingsDiv.addEventListener('click', function() {
+                motivationalQuoteDiv.textContent = getRandomQuote();
+            });
+        </script>
     </div>
 </body>
-
-</html>
-<script>
-    const messages = [
-        '愿所有的美好都如期而至',
-        '祝你心想事成万事如意',
-        '新的一岁收获更多快乐'
-    ];
-    let currentMsg = 0;
-    function rotateMessage() {
-        document.getElementById('blessings').textContent = messages[currentMsg];
-        currentMsg = (currentMsg + 1) % messages.length;
-    }
-    function createBalloon() {
-        const balloon = document.createElement('div');
-        balloon.className = 'balloon';
-        balloon.style.left = Math.random() * 95 + '%';
-        balloon.style.animationDelay = Math.random() * 5 + 's';
-        document.body.appendChild(balloon);
-    }
-    // 初始化
-    setInterval(rotateMessage, 2000);
-    setInterval(createBalloon, 1500);
-</script>
