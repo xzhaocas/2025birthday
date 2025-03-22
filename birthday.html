@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>祝朱凯宁生日快乐</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            text-align: center;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #ff6347;
+            animation: fadeIn 2s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        @keyframes float {
+            0% { transform: translateY(100vh) rotate(0deg); }
+            100% { transform: translateY(-100vh) rotate(360deg); }
+        }
+        .balloon {
+            width: 40px;
+            height: 60px;
+            background: #ff69b4;
+            border-radius: 80%;
+            position: absolute;
+            animation: float 8s linear infinite;
+            opacity: 0.8;
+        }
+        #blessings {
+            margin: 20px 0;
+            font-size: 1.2em;
+            color: #2c3e50;
+        }
+        .poem {
+            margin-top: 30px;
+            font-style: italic;
+            color: #34495e;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>祝朱凯宁生日快乐！</h1>
+        <div id="blessings"></div>
+        <div class="poem">
+            岁岁常欢愉，年年皆胜意<br>
+            愿君如松柏，夭矫历千霜
+        </div>
+    </div>
+</body>
+
+</html>
+<script>
+    const messages = [
+        '愿所有的美好都如期而至',
+        '祝你心想事成万事如意',
+        '新的一岁收获更多快乐'
+    ];
+    let currentMsg = 0;
+    function rotateMessage() {
+        document.getElementById('blessings').textContent = messages[currentMsg];
+        currentMsg = (currentMsg + 1) % messages.length;
+    }
+    function createBalloon() {
+        const balloon = document.createElement('div');
+        balloon.className = 'balloon';
+        balloon.style.left = Math.random() * 95 + '%';
+        balloon.style.animationDelay = Math.random() * 5 + 's';
+        document.body.appendChild(balloon);
+    }
+    // 初始化
+    setInterval(rotateMessage, 2000);
+    setInterval(createBalloon, 1500);
+</script>
